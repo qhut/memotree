@@ -245,6 +245,7 @@
     </section>
 
     <section>
+   @if(isset($users))
     <ul class="users">
         @foreach($users as $user)
             <li class="user" id="{{$user->id}}">
@@ -266,6 +267,7 @@
             </li>
         @endforeach
     </ul>
+   @endif
     </section>
 </aside> <!-- /.aside -->
 

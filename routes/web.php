@@ -17,6 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/message/{id}', 'HomeController@getMessage')->name('message');
-Route::post('message', 'HomeController@sendMessage');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/', function () { return view('welcome'); })->middleware('auth');
+
+    Route::resource('/notes', 'NotesController');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/message/{id}', 'HomeController@getMessage')->name('message');
+    Route::post('message', 'HomeController@sendMessage');
+});
+
+
