@@ -40,10 +40,12 @@
             cursor: pointer;
             padding: 5px 0;
             position: relative;
+            list-style: none;
+            font-size: 1.2em;
         }
 
         .user:hover {
-            background: #eeeeee;
+            font-size: 1.2em;
         }
 
         .user:last-child {
@@ -76,9 +78,11 @@
 
         .media-body p {
             margin: 6px 0;
+            font-size: 1em;
         }
 
         .message-wrapper {
+            margin-top: 20px;
             padding: 10px;
             height: 536px;
             background: #eeeeee;
@@ -107,7 +111,8 @@
         }
 
         .sent {
-            background: #3bebff;
+            background: rgba(29, 95, 113, 0.23);
+            font-size: 1.5em;
             float: right;
             text-align: right;
         }
@@ -122,11 +127,13 @@
         }
 
         .active {
-            background: #eeeeee;
+            color: #ff4800;
         }
 
         input[type=text] {
             width: 100%;
+            height: 70px;
+            font-size: 1.5em;
             padding: 12px 20px;
             margin: 15px 0 0 0;
             display: inline-block;
@@ -175,11 +182,6 @@
 @include('partials.footer')
 
 </section>
-
-
-
-
-
 
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -269,6 +271,7 @@
     });
     // make a function to scroll down auto
     function scrollToBottomFunc() {
+        $( ".input-text .submit" ).focus();
         $('.message-wrapper').animate({
             scrollTop: $('.message-wrapper').get(0).scrollHeight
         }, 50);
