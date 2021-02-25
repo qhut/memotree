@@ -41,11 +41,12 @@
             padding: 5px 0;
             position: relative;
             list-style: none;
-            font-size: 1.2em;
+            font-size: 0.8em;
         }
 
         .user:hover {
-            font-size: 1.2em;
+            font-size: 0.85em;
+            background-color: #00a6ce;
         }
 
         .user:last-child {
@@ -128,6 +129,7 @@
 
         .active {
             color: #ff4800;
+            background-color: #00a6ce;
         }
 
         input[type=text] {

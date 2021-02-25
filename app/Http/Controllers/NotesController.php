@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\View;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Note;
 use App\NotesChildren;
+use Illuminate\Support\Facades\DB;
+
 
 
 class NotesController extends Controller
@@ -29,7 +31,17 @@ class NotesController extends Controller
         $note = $notes->last();
         $note_menu = $this->createMenu();
 
-        return view('notes.index')->with('notes', $notes)->with('note', $note)->with('note_menu', $note_menu);
+
+        $users = DB::select("select users.id, users.name, users.avatar, users.email, count(is_read) as unread
+        from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
+        where users.id != " . Auth::id() . "
+        group by users.id, users.name, users.avatar, users.email");
+
+        return view('notes.index')
+            ->with('notes', $notes)
+            ->with('note', $note)
+            ->with('note_menu', $note_menu)
+            ->with('users', $users);
     }
 
     public function show($id)

@@ -173,8 +173,8 @@
                                 <li > <a href="#" > <i class="fa fa-angle-right"></i> <span>Timeline</span> </a></li>
                             </ul>
                         </li>
-                        <li >
-                            <a href="#" > <i class="fa fa-file-text icon"><b class="bg-primary"></b></i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span><span>Pages</span> </a>
+                        <li>
+                            <a href="/tasks" > <i class="fa fa-file-text icon"><b class="bg-primary"></b></i> <span class="pull-right"> <i class="fa fa-angle-down text"></i> <i class="fa fa-angle-up text-active"></i> </span><span>Tasks</span> </a>
                             <ul class="nav lt">
                                 <li > <a href="#" > <i class="fa fa-angle-right"></i> <span>Gallery</span> </a> </li>
                                 <li > <a href="#" > <i class="fa fa-angle-right"></i> <span>Profile</span> </a> </li>
@@ -188,7 +188,7 @@
                                 <li > <a href="#" > <i class="fa fa-angle-right"></i> <span>404</span> </a> </li>
                             </ul>
                         </li>
-                        <li > <a href="#" > <b class="badge bg-danger pull-right">2000</b> <i class="fa fa-envelope-o icon"> <b class="bg-primary dker"></b> </i> <span>Message</span> </a> </li>
+                        <li > <a href="/home" > <b class="badge bg-danger pull-right">2000</b> <i class="fa fa-envelope-o icon"> <b class="bg-primary dker"></b> </i> <span>Message</span> </a> </li>
                         @if(!isset($note_menu))
                             <li >
                                 <a href="/notes" >
@@ -244,7 +244,7 @@
         </footer>
     </section>
 
-    <section>
+    <section style="height: 400px; overflow: scroll;">
    @if(isset($users))
     <ul class="users">
         @foreach($users as $user)
@@ -257,7 +257,7 @@
 
                 <div class="media">
                     <div class="media-left">
-                        <img src="{{$user->avatar}}" alt="" class="media-object">
+                        <img src="" alt="" class="media-object">
                     </div>
 
                     <div class="media-body" style="font-size: 1.5em;">
