@@ -224,6 +224,7 @@
                 data: "",
                 cache: false,
                 success: function (data) {
+                    console.log(data);
                     $('#messages').html(data);
                     scrollToBottomFunc();
                 }
