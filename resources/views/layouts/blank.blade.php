@@ -30,7 +30,7 @@
 
     <style>
         html, body {
-            #background: linear-gradient(45deg,#49a09d, #194443);
+            background: linear-gradient(45deg, #0e1e1e, #52514f);
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
