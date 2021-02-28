@@ -8,7 +8,7 @@
         });
     </script>
 
-    <div class="col-xs-12">
+    <div class="">
         <div class="top-content" >
             <form method="POST" id="form_node" action="/notes/{{ $note->id ?? '' }}" class="form-actions" accept-charset="UTF-8" enctype="multipart/form-data">
                 {{ csrf_field() }}
