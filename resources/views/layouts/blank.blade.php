@@ -30,7 +30,7 @@
 
     <style>
         html, body {
-            background: linear-gradient(45deg, #0e1e1e, #52514f);
+            background: linear-gradient(45deg, #0e1e1e, #467974);
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
@@ -81,7 +81,7 @@
         }
 
         .card {
-            background: linear-gradient(45deg, #0e1e1d, #194443);
+            background: linear-gradient(45deg, #0e1e1d, #467974);
         }
     </style>
 </head>
