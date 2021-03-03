@@ -165,7 +165,7 @@
         </section>
     </section>
 
-
+    @include('partials.footer')
 
 </section>
 
