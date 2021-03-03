@@ -56,13 +56,13 @@
         .pending {
             position: absolute;
             left: 87%;
-            top: 22px;
+            top: 8px;
             background: #ee0339;
             margin: 0;
             border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            line-height: 18px;
+            width: 19px;
+            height: 19px;
+            line-height: 19px;
             padding-left: 5px;
             color: #ffffff;
             font-size: 12px;
