@@ -215,19 +215,18 @@
 
         $('.user').click(function () {
             $('.user').removeClass('active');
-
             $(this).addClass('active');
             $(this).find('.pending').remove();
-
             receiver_id = $(this).attr('id');
-            if(window.location.pathname != '/home'){
-                window.location.href='/home';
-            }
-
             $.ajax({
                 type: "get",
                 url: "message/" + receiver_id, // need to create this route
                 data: "",
+                beforeSend: function(){
+                    if(window.location.pathname != '/home'){
+                        window.location.href='/home';
+                    }
+                },
                 cache: false,
                 success: function (data) {
                     $('#messages').html(data);

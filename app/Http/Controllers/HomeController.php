@@ -27,14 +27,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($user_id = 0)
+    public function index()
     {
-        //dd($user_id);
-        if (isset($user_id))
-        {
-            $this->getMessage($user_id);
-        }
-
 
         $all_messages = Message::all();
         $last_message = $all_messages->last();

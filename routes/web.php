@@ -25,8 +25,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/message/{id}', 'HomeController@getMessage')->name('message');
     Route::get('/home/{id?}', 'HomeController@index')->name('home');
-
-
     Route::post('message', 'HomeController@sendMessage');
 });
 
