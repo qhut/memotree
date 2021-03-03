@@ -100,16 +100,16 @@ class NotesController extends Controller
     public function update(Request $request)
     {
         //$this->validate($request, [
-        //  'name_node' => 'required'
+        //  'note_name' => 'required'
         //]);
 
         $note_id   = $request->input('note_id');
 
         $note = Note::find($note_id);
         $note->name     = $request->input('note_name');
-        $note->level    = $request->input('note_level');
+        $note->level    = 0;
         $note->content  = $request->input('note_content');
-        $note->bookmark = $request->input('note_bookmark');
+        $note->bookmark = 0;
         $note->save();
 
         $note = Note::find($note_id);

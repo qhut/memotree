@@ -20,7 +20,8 @@
                                 <input type="submit" class="btn btn-xs btn-primary" name="commit" value="Update">
                             </div>
                             <br/>
-                            <input class="note-input" id="note_name"  name="note_name"     value="{{ $note->name ?? '' }}"     type="text"   placeholder="Note name">
+                            <input name="note_id" value="{{ $note->id ?? '' }}" type="hidden">
+                            <input class="note-input" id="note_name"  name="note_name" value="{{ $note->name ?? '' }}" type="text" placeholder="Note name">
                         </div>
                         <br/>
                         <textarea id="summernote" name="note_content">{{ $note->content ?? '' }}</textarea>
