@@ -16,13 +16,13 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('task_subject');
-            $table->text('task_description')->default('');
-            $table->text('task_comments')->default('');
-            $table->string('reporter')->default('');
-            $table->string('assign')->default('');
-            $table->text('priority')->default('Low');
+            $table->text('task_description');
+            $table->text('task_comments');
+            $table->string('reporter');
+            $table->string('assign');
+            $table->text('priority');
             $table->tinyInteger('task_progress')->default(0);
-            $table->string('deadline')->default('');
+            $table->string('deadline');
             $table->timestamps();
         });
     }
