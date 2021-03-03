@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <div class="message-wrapper">
     <ul class="messages">
         @foreach($messages as $message)
@@ -17,6 +14,5 @@
 <div class="input-text">
     <input type="text" name="message" class="submit">
 </div>
-@endsection
 
 

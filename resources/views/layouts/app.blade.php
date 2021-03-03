@@ -221,7 +221,7 @@
 
             receiver_id = $(this).attr('id');
             if(window.location.pathname != '/home'){
-                window.location.href='/message/' + receiver_id;
+                window.location.href='/home';
             }
 
             $.ajax({
@@ -268,9 +268,7 @@
         $('#home .badge.bg-danger.pull-right').remove();
         $( ".input-text .submit" ).focus();
         var msg_wrapper = $('.message-wrapper')
-        if (window.msg_wrapper){
-            msg_wrapper.animate({scrollTop: msg_wrapper.get(0).scrollHeight}, 50);
-        }
+        msg_wrapper.animate({scrollTop: msg_wrapper.get(0).scrollHeight}, 50);
     }
 </script>
 

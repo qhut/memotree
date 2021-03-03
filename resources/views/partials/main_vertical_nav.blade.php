@@ -40,7 +40,7 @@
                             </a>
                         </li>
                         <li >
-                            <a href="/home" id="home">
+                            <a href="#" id="home">
 
                                 <i class="fa fa-file-text icon">
                                     <b class="bg-primary dker"></b>
