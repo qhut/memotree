@@ -8,7 +8,7 @@
         });
     </script>
 
-    <div class="">
+    <div class="container">
         <div class="top-content" >
             <form method="POST" id="form_node" action="/notes/{{ $note->id ?? '' }}" class="form-actions" accept-charset="UTF-8" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -19,7 +19,7 @@
                     <div class="input-group-append">
                         <a id="btn-edit"     class="btn btn-xs btn-primary" href="/notes/{{ $note->id ?? '' }}/edit"> Edit </a>
                         <a id="btn-show"     class="btn btn-xs btn-info" href="/notes/{{ $note->id ?? '' }}"> Show </a>
-                        <a id="btn-create"   class="btn btn-xs btn-success" href="/notes/create"> Add New</a>
+                        <a id="btn-create"   class="btn btn-xs btn-success" href="/notes/create"> Add New Note</a>
                         <a id="btn-create"   class="btn btn-xs btn-success" href="/notes"> Back</a>
                         <input id="btn-delete" class="btn btn-xs btn-danger" type="submit" name="commit" value="Delete">
                     </div>

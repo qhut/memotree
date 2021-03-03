@@ -20,7 +20,7 @@
     <div class="col-xs-12">
         <h1>Notes</h1>
         <div class="input-group-append">
-            <a id="btn-create" class="btn btn-xs btn-success" href="/notes/create"> Add New</a>
+            <a id="btn-create" class="btn btn-xs btn-success" href="/notes/create"> Add New Note</a>
         </div>
     <br/>
 
@@ -29,9 +29,9 @@
         <tr>
             <th>Key</th>
             <th>Name</th>
-            <th>Edit</th>
-            <th>Show</th>
-            <th>Delete</th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
 
             <tr>
                 <td class="lalign">{{$note->id}}</td>
-                <td>{{$note->name}}</td>
+                <td><a id="btn-show" href="/notes/{{ $note->id ?? '' }}">{{$note->name}} </a></td>
                 <td><a id="btn-edit" class="btn btn-xs btn-primary" href="/notes/{{ $note->id ?? '' }}/edit"> Edit </a>
                 </td>
                 <td><a id="btn-show" class="btn btn-xs btn-info" href="/notes/{{ $note->id ?? '' }}"> Show </a></td>

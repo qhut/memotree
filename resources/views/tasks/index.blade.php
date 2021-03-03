@@ -41,7 +41,9 @@
                 @foreach($tasks as $task)
                     <tr>
                         <td >{{$task->id}}</td>
-                        <td>{{$task->task_subject}}</td>
+                        <td>
+                            <a id="btn-show" href="/tasks/{{ $task->id ?? '' }}"> {{$task->task_subject}}  </a>
+                        </td>
                         <td>{{$task->reporter}}</td>
                         <td>{{$task->assign}}</td>
                         <td>{{$task->priority}}</td>
