@@ -10,7 +10,7 @@
                 <div class="container">
                     <h3>Create new task</h3>
                     <div class="form-group">
-                    <form method="POST" id="form_node" action="/tasks/{{ $task->id ?? '' }}" accept-charset="UTF-8" enctype="multipart/form-data">
+                    <form method="POST" id="form_node" action="/tasks" accept-charset="UTF-8" enctype="multipart/form-data">
 
                         {{ csrf_field() }}
 
