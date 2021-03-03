@@ -15,7 +15,8 @@
                         </div>
 
                         <div class="media-body" style="font-size: 1.5em;">
-                            <i class="fas fa-portrait" title="{{ $user->email}} ">      </i> {{$user->name}}
+                            <i class="fas fa-portrait" title="{{ $user->email}}"></i>
+                            {{$user->name}}
                         </div>
                     </div>
                 </li>

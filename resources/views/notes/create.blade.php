@@ -4,9 +4,10 @@
     <script>//$('.sidebar-menu').toggleClass('sidebar-menu-closed');</script>
     <div class="container-fluid">
         <div class="row">
-            <br/>
             <div class="col-9">
+
                 <div class="container">
+                    <h3>Create note</h3>
                     <form method="POST" id="form_node" action="/notes" accept-charset="UTF-8" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="">

@@ -26,8 +26,8 @@
     </style>
 
     <div class="container-fluid">
+        <h3>Show task</h3>
         <div class="row">
-            <br/>
             <div class="col-9">
                 <div class="container">
                     <div class="form-group">

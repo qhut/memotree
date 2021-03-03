@@ -9,6 +9,7 @@
 
             <div class="col-9">
                 <div class="container">
+                    <h3>Edit note</h3>
                     <form method="POST" id="form_node" action="/notes/{{ $note->id ?? '' }}" accept-charset="UTF-8" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="">

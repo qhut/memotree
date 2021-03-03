@@ -9,11 +9,10 @@
     </script>
 
     <div class="container">
+        <h3>Show note</h3>
         <div class="top-content" >
             <form method="POST" id="form_node" action="/notes/{{ $note->id ?? '' }}" class="form-actions" accept-charset="UTF-8" enctype="multipart/form-data">
                 {{ csrf_field() }}
-
-                <br/>
                 <div class="input-group" style="display:inline-block; vertical-align: middle;">
 
                     <div class="input-group-append">

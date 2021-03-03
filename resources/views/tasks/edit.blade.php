@@ -11,7 +11,7 @@
             <br/>
             <div class="col-9">
                 <div class="container">
-                    <h2>Edit Task</h2>
+                    <h3>Edit Task</h3>
                     <div class="form-group">
                         <form method="POST" id="form_node" action="/tasks/{{ $task->id ?? '' }}" accept-charset="UTF-8" enctype="multipart/form-data">
 

@@ -18,7 +18,7 @@
 
 
     <div class="col-xs-12">
-        <h1>Notes</h1>
+        <h3>All Notes</h3>
         <div class="input-group-append">
             <a id="btn-create" class="btn btn-xs btn-success" href="/notes/create"> Add New Note</a>
         </div>

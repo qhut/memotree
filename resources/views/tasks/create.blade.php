@@ -8,7 +8,7 @@
             <br/>
             <div class="col-9">
                 <div class="container">
-                    <h2>Create new task</h2>
+                    <h3>Create new task</h3>
                     <div class="form-group">
                     <form method="POST" id="form_node" action="/tasks/{{ $task->id ?? '' }}" accept-charset="UTF-8" enctype="multipart/form-data">
 

@@ -14,7 +14,7 @@
     </style>
 
     <div class="col-xs-12">
-        <h1>Tasks</h1>
+        <h3>All Tasks</h3>
         <div class="input-group-append">
             <a id="btn-create" class="btn btn-xs btn-success" href="/tasks/create"> Add New Task</a>
         </div>

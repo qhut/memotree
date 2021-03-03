@@ -204,9 +204,11 @@
                     // if receiver is not seleted, add notification for that user
                     var pending = parseInt($('#' + data.from).find('.pending').html());
                     if (pending) {
+                        $('#home .badge.bg-danger.pull-right').remove();
+                        $('#home').append('<b class="badge bg-danger pull-right">!</b>');
                         $('#' + data.from).find('.pending').html(pending + 1);
                     } else {
-                        $('#home').append(' <b class="badge bg-danger pull-right">!</b>');
+                        $('#home').append('<b class="badge bg-danger pull-right">!</b>');
                         $('#' + data.from).append('<span class="pending">1</span>');
                     }
                 }
@@ -215,6 +217,7 @@
 
         $('.user').click(function () {
             $('.user').removeClass('active');
+
             $(this).addClass('active');
             $(this).find('.pending').remove();
 
@@ -261,6 +264,7 @@
     });
     // make a function to scroll down auto
     function scrollToBottomFunc() {
+        $('#home .badge.bg-danger.pull-right').remove();
         $( ".input-text .submit" ).focus();
         $('.message-wrapper').animate({scrollTop: $('.message-wrapper').get(0).scrollHeight}, 50);
     }
