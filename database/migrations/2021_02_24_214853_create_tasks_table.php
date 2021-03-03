@@ -20,7 +20,7 @@ class CreateTasksTable extends Migration
             $table->text('task_comments');
             $table->string('reporter');
             $table->string('assign');
-            $table->text('priority')->default('Low');
+            $table->text('priority');
             $table->tinyInteger('task_progress')->default(0);
             $table->string('deadline');
             $table->timestamps();
