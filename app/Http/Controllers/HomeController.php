@@ -27,8 +27,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($user_id = 0)
     {
+        //dd($user_id);
+        if (isset($user_id))
+        {
+            $this->getMessage($user_id);
+        }
+
+
         $all_messages = Message::all();
         $last_message = $all_messages->last();
         $users = DB::select("select users.id, users.name, users.avatar, users.email, count(is_read) as unread

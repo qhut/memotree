@@ -52,60 +52,7 @@
                 </nav> <!-- / nav -->
             </div>
         </section>
+        @include('partials.users_nav')
     </section>
-    <script>
-        $(document).ready(function () {
-            console.log(window.location.pathname)
-            if(window.location.pathname == '/home'){
-                $('#home').addClass('active')
-            }
-            if(window.location.pathname == '/tasks'){
-                $('#tasks').addClass('active')
-            }
-            if(window.location.pathname == '/notes'){
-                $('#notes').addClass('active')
-            }
-        });
-    </script>
-    @include('partials.users_nav')
-
-    <footer class="footer lt hidden-xs b-t b-dark"> <div id="chat" class="dropup">
-            <section class="dropdown-menu on aside-md m-l-n">
-                <section class="panel bg-white">
-                    <header class="panel-heading b-b b-light">Active chats</header>
-                    <div class="panel-body animated fadeInRight">
-                        <p class="text-sm">No active chats.</p>
-                        <p><a href="#" class="btn btn-sm btn-default">Start a chat</a></p>
-                    </div>
-                </section>
-            </section>
-        </div> <div id="invite" class="dropup">
-            <section class="dropdown-menu on aside-md m-l-n">
-                <section class="panel bg-white">
-                    <header class="panel-heading b-b b-light"> <i class="fa fa-circle text-success"></i> </header>
-                    <div class="panel-body animated fadeInRight">
-                        <p class="text-sm">No</p>
-                        <p>
-                            <a href="#" class="btn btn-sm btn-facebook">
-                                <i class="fa fa-fw fa-facebook"></i>
-                            </a>
-                        </p>
-                    </div>
-                </section>
-            </section>
-        </div>
-        <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
-            <i class="fa fa-angle-left text"></i>
-            <i class="fa fa-angle-right text-active"></i>
-        </a>
-        <div class="btn-group hidden-nav-xs">
-            <button type="button" title="Chats" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown" data-target="#chat">
-                <i class="fa fa-comment-o"></i>
-            </button>
-            <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown" data-target="#invite">
-                <i class="fa fa-facebook"></i>
-            </button>
-        </div>
-    </footer>
 </aside>
 <!-- /.aside -->

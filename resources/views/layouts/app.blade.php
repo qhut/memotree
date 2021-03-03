@@ -55,9 +55,9 @@
 
         .pending {
             position: absolute;
-            left: 13px;
-            top: 9px;
-            background: #b600ff;
+            left: 87%;
+            top: 22px;
+            background: #ee0339;
             margin: 0;
             border-radius: 50%;
             width: 18px;
@@ -156,9 +156,7 @@
     <section class="vbox">
         @include('partials.horizontal_nav')
         <section class="hbox stretch">
-
             @include('partials.main_vertical_nav')
-
             <section class="scrollable padder">
                 <div style="height:800px;">
                     @yield('content')
@@ -167,7 +165,7 @@
         </section>
     </section>
 
-@include('partials.footer')
+
 
 </section>
 
@@ -222,13 +220,16 @@
             $(this).find('.pending').remove();
 
             receiver_id = $(this).attr('id');
+            if(window.location.pathname != '/home'){
+                window.location.href='/message/' + receiver_id;
+            }
+
             $.ajax({
                 type: "get",
                 url: "message/" + receiver_id, // need to create this route
                 data: "",
                 cache: false,
                 success: function (data) {
-                    console.log(data);
                     $('#messages').html(data);
                     scrollToBottomFunc();
                 }
@@ -266,8 +267,27 @@
     function scrollToBottomFunc() {
         $('#home .badge.bg-danger.pull-right').remove();
         $( ".input-text .submit" ).focus();
-        $('.message-wrapper').animate({scrollTop: $('.message-wrapper').get(0).scrollHeight}, 50);
+        var msg_wrapper = $('.message-wrapper')
+        if (window.msg_wrapper){
+            msg_wrapper.animate({scrollTop: msg_wrapper.get(0).scrollHeight}, 50);
+        }
     }
 </script>
+
+
+    <script>
+        $(document).ready(function () {
+            console.log(window.location.pathname)
+            if(window.location.pathname == '/home'){
+                $('#home').addClass('active')
+            }
+            if(window.location.pathname == '/tasks'){
+                $('#tasks').addClass('active')
+            }
+            if(window.location.pathname == '/notes'){
+                $('#notes').addClass('active')
+            }
+        });
+    </script>
 </body>
 </html>

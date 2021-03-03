@@ -1,4 +1,4 @@
-<section style="height: 600px; overflow: scroll;">
+<section style="min-height: 500px; overflow-y: scroll;">
     @if(isset($users))
         <ul class="users">
             @foreach($users as $user)
@@ -23,4 +23,5 @@
             @endforeach
         </ul>
     @endif
+
 </section>

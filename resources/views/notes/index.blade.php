@@ -64,11 +64,7 @@
     </table>
 
     </div>
-    <script>
-        $(function () {
-            $('#keywords').tablesorter();
-        });
-    </script>
+
     <script>
         function enter_form(node_id) {
             var nodes_data = {!! json_encode($notes) !!};
