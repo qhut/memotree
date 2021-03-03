@@ -107,7 +107,6 @@ class NotesController extends Controller
 
         $note = Note::find($note_id);
         $note->name     = $request->input('note_name');
-
         $note->level    = $request->input('note_level');
         $note->content  = $request->input('note_content');
         $note->bookmark = $request->input('note_bookmark');
