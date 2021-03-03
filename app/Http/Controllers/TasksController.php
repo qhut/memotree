@@ -55,12 +55,12 @@ class TasksController extends Controller
         $task = new Task();
         $task->task_subject     = $request->input('task_subject');
         $task->task_description = $request->input('task_description');
-        $task->task_comments    = $request->input('task_comments');
-        $task->reporter         = Auth::user()->name;;
-        $task->assign           = $request->input('assign');
+        $task->task_comments    = $request->input('task_comments') ?? '';
+        $task->reporter         = Auth::user()->name;
+        $task->assign           = $request->input('assign') ?? '';
         $task->priority         = $request->input('priority');
         $task->task_progress    = 0;
-        $task->deadline         = $request->input('deadline');
+        $task->deadline         = $request->input('deadline') ?? '';
         $task->save();
 
         return redirect('/tasks');

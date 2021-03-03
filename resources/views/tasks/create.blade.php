@@ -37,9 +37,6 @@
                                 <option value="">Oniq</option>
                                 <option value="">Drugiq</option>
                             @endif
-
-
-
                         </select>
                         <br/>
 
