@@ -55,14 +55,14 @@
                 <div class="col-md-3">
                     <h4></h4>
                     <ul class="social-network social-circle">
-                        <li><a href="https://github.com/tosheee/" class="icon-bar" title="Github"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://github.com/qhut" class="icon-bar" title="Github"><i class="fa fa-github"></i></a></li>
                     </ul>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12 copy">
-                    <p class="text-center">&copy; Copyright 2018 - CyberHills.  All rights reserved.</p>
+                    <p class="text-center">&copy; Copyright 2018 - qHat.  All rights reserved.</p>
                 </div>
             </div>
 

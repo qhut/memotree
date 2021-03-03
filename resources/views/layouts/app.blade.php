@@ -206,6 +206,7 @@
                     if (pending) {
                         $('#' + data.from).find('.pending').html(pending + 1);
                     } else {
+                        $('#home').append(' <b class="badge bg-danger pull-right">!</b>');
                         $('#' + data.from).append('<span class="pending">1</span>');
                     }
                 }
@@ -261,9 +262,7 @@
     // make a function to scroll down auto
     function scrollToBottomFunc() {
         $( ".input-text .submit" ).focus();
-        $('.message-wrapper').animate({
-            scrollTop: $('.message-wrapper').get(0).scrollHeight
-        }, 50);
+        $('.message-wrapper').animate({scrollTop: $('.message-wrapper').get(0).scrollHeight}, 50);
     }
 </script>
 </body>

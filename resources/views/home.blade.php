@@ -22,6 +22,10 @@
                         <input type="text" name="message" class="submit">
                     </div>
                 </div>
+            @else
+                <div class="col-md-8" id="messages">
+
+                </div>
             @endif
         </div>
     </div>

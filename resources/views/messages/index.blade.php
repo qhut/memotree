@@ -15,12 +15,5 @@
     <input type="text" name="message" class="submit">
 </div>
 
-<script>
-    $(document).ready(function () {
-        $(".input-text .submit").focus();
-        $('.message-wrapper').animate({
-            scrollTop: $('.message-wrapper').get(0).scrollHeight
-        }, 50);
-    });
-</script>
+
 

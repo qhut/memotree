@@ -41,7 +41,7 @@
                         </li>
                         <li >
                             <a href="/home" id="home">
-                                <b class="badge bg-danger pull-right">2</b>
+
                                 <i class="fa fa-file-text icon">
                                     <b class="bg-primary dker"></b>
                                 </i>

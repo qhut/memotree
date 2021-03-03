@@ -31,8 +31,12 @@ class HomeController extends Controller
     {
         $all_messages = Message::all();
         $last_message = $all_messages->last();
+        $users = DB::select("select users.id, users.name, users.avatar, users.email, count(is_read) as unread
+            from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
+            where users.id != " . Auth::id() . "
+            group by users.id, users.name, users.avatar, users.email");
 
-        if(isset($last_message)){
+        if(isset($last_message)) {
             $user_id = $last_message->to;
             //dd($last_message);
             $my_id = Auth::id();
@@ -47,13 +51,20 @@ class HomeController extends Controller
                 $query->where('from', $my_id)->where('to', $user_id);
             })->get();
 
-            $users = DB::select("select users.id, users.name, users.avatar, users.email, count(is_read) as unread
-            from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
-            where users.id != " . Auth::id() . "
-            group by users.id, users.name, users.avatar, users.email");
-
-        return view('home', ['users' => $users, 'messages' => $messages]);
-        }else{
+            if(isset($users) && isset($messages))
+            {
+                return view('home', ['users' => $users, 'messages' => $messages]);
+            }
+            if(isset($users))
+            {
+                return view('home', ['users' => $users, 'messages' => $messages]);
+            }
+        }
+        elseif(isset($users))
+        {
+            return view('home', ['users' => $users]);
+        }else
+        {
             return view('home');
         }
     }
