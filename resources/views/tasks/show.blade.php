@@ -2,45 +2,70 @@
 
 @section('content')
     <script>//$('.sidebar-menu').toggleClass('sidebar-menu-closed');</script>
+
     <script type="text/javascript">
-        $(document).ready(function() {
-            document.title = "{{ $note->name ?? 'MemoTree' }}";
+        $(document).ready(function () {
+            document.title = "{{ $task->task_subject ?? 'MemoTree' }}";
         });
     </script>
 
-    <div class="">
-        <div class="top-content" >
-            <form method="POST" id="form_node" action="/notes/{{ $note->id ?? '' }}" class="form-actions" accept-charset="UTF-8" enctype="multipart/form-data">
-                {{ csrf_field() }}
+    <style>
+        .description-task-content {
+            width: 90%;
+            min-height: 500px;
+            padding: 2px;
+            box-shadow: 1px 1px 2px 5px #d9d9d9;
+        }
+        h2 {
+            padding-left: 20px;
+            text-decoration: underline;
+        }
+        p {
+            margin: 10px 10px 10px 10px;
+        }
+    </style>
 
-                <br/>
-                <div class="input-group" style="display:inline-block; vertical-align: middle;">
+    <div class="container-fluid">
+        <div class="row">
+            <br/>
+            <div class="col-9">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="POST" id="form_node" action="/tasks/{{ $task->id ?? '' }}" accept-charset="UTF-8" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="">
+                                <div class="input-group-append">
+                                    <a id="btn-create" class="btn btn-xs btn-info" href="/tasks"> Tasks</a>
+                                    <a id="btn-create" class="btn btn-xs btn-success" href="/tasks/create"> Add New Task</a>
+                                    <a id="btn-edit" class="btn btn-xs btn-primary" href="/tasks/{{ $task->id ?? '' }}/edit"> Edit </a>
+                                    <strong>&nbsp;&nbsp;&nbsp;&nbsp;Reporter:</strong> {{$task->reporter ?? ''}}
+                                </div>
+                                <br>
+                                <div class="input-group-append">
+                                    <strong>&nbsp; Assigned:</strong> {{$task->assign ?? ''}}
+                                    <strong>&nbsp;&nbsp;&nbsp; Due Date: </strong> {{$task->deadline ?? ''}}
+                                    <strong>&nbsp;&nbsp;&nbsp; Priority: </strong>{{$task->priority ?? ''}}
+                                    <strong>&nbsp;&nbsp;&nbsp; Progress: &nbsp; </strong>
+                                    <progress style="position: absolute; padding: 10px;" value="{{$task->task_progress ?? 0}}" max="100" title="{{$task->task_progress}}%">{{$task->task_progress ?? 0}} </progress>
+                                </div>
+                            </div>
+                            <br>
+                            <h2>{{ $task->task_subject ?? '' }}</h2>
+                            <br>
+                            <div class="description-task-content">
+                                {!! $task->task_description ?? '' !!}
+                            </div>
+                            <br>
+                            <br>
 
-                    <div class="input-group-append">
-                        <a id="btn-edit"     class="btn btn-xs btn-primary" href="/notes/{{ $note->id ?? '' }}/edit"> Edit </a>
-                        <a id="btn-show"     class="btn btn-xs btn-info" href="/notes/{{ $note->id ?? '' }}"> Show </a>
-                        <a id="btn-create"   class="btn btn-xs btn-success" href="/notes/create"> Add New</a>
-                        <a id="btn-create"   class="btn btn-xs btn-success" href="/notes"> Back</a>
-                        <input id="btn-delete" class="btn btn-xs btn-danger" type="submit" name="commit" value="Delete">
+                            <div>
+                                <strong>Comment: </strong>{{$task->task_comments ?? 'No comment'}}
+                            </div>
+                            <br>
+                        </form>
                     </div>
-
-                    <p>
-                    <p>
-                        Level: <strong id="note_level" style="font-size: 1em">{{ $note->level ?? '' }}</strong>
-                        ID: <strong id="note_id" style="font-size: 1em">{{ $note->id ?? '' }}</strong>
-                    </p>
-                    <strong id="note_name" style="font-size: 2.5em">{{ $note->name ?? '' }}</strong>
-                    </p>
                 </div>
-
-                <input name="_method" type="hidden" value="DELETE" id="input_method">
-            </form>
+            </div>
         </div>
-
-        <br/>
-
-
-        <div id="note-content">{!! $note->content ?? '' !!}</div>
-
     </div>
 @endsection

@@ -8,7 +8,7 @@
             color: white;
         }
         th, td{
-            font-size: 1.3em;
+            font-size: 1em;
             text-align: center;
             padding: 1%;
         }

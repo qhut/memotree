@@ -7,7 +7,7 @@
             color: white;
         }
         th, td{
-            font-size: 1.3em;
+            font-size: 1em;
             text-align: center;
             padding: 1%;
         }
@@ -16,7 +16,7 @@
     <div class="col-xs-12">
         <h1>Tasks</h1>
         <div class="input-group-append">
-            <a id="btn-create" class="btn btn-xs btn-success" href="/notes/create"> Add New</a>
+            <a id="btn-create" class="btn btn-xs btn-success" href="/tasks/create"> Add New Task</a>
         </div>
         <br>
 
@@ -28,10 +28,13 @@
                     <th>Reporter</th>
                     <th>Assigned</th>
                     <th>Priority</th>
-                    <th>Date</th>
-                    <th>Edit</th>
-                    <th>Show</th>
-                    <th>Delete</th>
+                    <th>Task Progress</th>
+                    <th>Due date</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -39,10 +42,16 @@
                     <tr>
                         <td >{{$task->id}}</td>
                         <td>{{$task->task_subject}}</td>
-                        <td>{{$task->task_progress}}</td>
-                        <td>{{$task->user_id}}</td>
+                        <td>{{$task->reporter}}</td>
+                        <td>{{$task->assign}}</td>
+                        <td>{{$task->priority}}</td>
+                        <td>
+                            <progress style="width: 70%" id="file" value="{{$task->task_progress}}" max="100"  title="{{$task->task_progress}}%">{{$task->task_progress}} </progress>
+                        </td>
+                        <td>{{$task->deadline ?? "None"}}</td>
                         <td>{{$task->created_at}}</td>
                         <td>{{$task->updated_at}}</td>
+
                         <td>
                             <a id="btn-edit" class="btn btn-xs btn-primary" href="/tasks/{{ $task->id ?? '' }}/edit"> Edit </a>
                         </td>

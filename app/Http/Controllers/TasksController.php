@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Task;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\User;
 
 
 class TasksController extends Controller
@@ -42,29 +43,49 @@ class TasksController extends Controller
 
     public function create()
     {
-        return view('tasks.create');
+        $users = User::all();
+
+        return view('tasks.create')->with('users', $users);
     }
 
     public function store(Request $request)
     {
+        //dd($request);
+
+        $task = new Task();
+        $task->task_subject     = $request->input('task_subject');
+        $task->task_description = $request->input('task_description');
+        $task->task_comments    = $request->input('task_comments');
+        $task->reporter         = Auth::user()->name;;
+        $task->assign           = $request->input('assign');
+        $task->priority         = $request->input('priority');
+        $task->task_progress    = 0;
+        $task->deadline         = $request->input('deadline');
+        $task->save();
+
         return redirect('/tasks');
     }
 
     public function edit($id)
     {
         $task = Task::find($id);
-
-        return view('tasks.edit')->with('title', 'Промяна на категория');
+        $users = User::all();
+        return view('tasks.edit')->with('task', $task)->with('users', $users);
     }
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-        ]);
 
+       // dd($request);
         $task = Task::find($id);
-        $task->name = $request->input('name');
+        $task->task_subject     = $request->input('task_subject');
+        $task->task_description = $request->input('task_description');
+        $task->task_comments    = $request->input('task_comments');
+        $task->reporter         = $request->input('reporter');
+        $task->assign           = $request->input('assign');
+        $task->priority         = $request->input('priority');
+        $task->task_progress    = $request->input('task_progress');
+        $task->deadline         = $request->input('deadline') ?? '';
         $task->save();
 
         return redirect('tasks')->with('message', 'The task is changed');
@@ -72,7 +93,7 @@ class TasksController extends Controller
 
     public function destroy($id)
     {
-        $task = Tasks::find($id);
+        $task = Task::find($id);
         $task->delete();
 
         return redirect('tasks')->with('message', 'The task is deleted');
